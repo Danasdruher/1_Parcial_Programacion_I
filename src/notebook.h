@@ -7,6 +7,7 @@
 
 #include "marca.h"
 #include "tipo.h"
+#include "servicios.h"
 
 #ifndef NOTEBOOK_H_
 #define NOTEBOOK_H_
@@ -25,9 +26,11 @@ int menuModificar(void);
 int inicializarNotebook(eNotebook notebooks[],int tam);
 int buscarLibre(eNotebook notebooks[],int tam);
 int altaNotebooks(eNotebook notebooks[],int tam,eMarca marcas[], int tamMarca,eTipo tipos[],int tamTipo,int* pId);
-void mostrarNotebook(eNotebook notebooks[],int tam,eMarca marcas[], int tamMarca,eTipo tipos[],int tamTipo);
+void mostrarNotebook(eNotebook notebooks,int tam,eMarca marcas[], int tamMarca,eTipo tipos[],int tamTipo);
 int mostrarNotebooks(eNotebook notebooks[],int tam,eMarca marcas[], int tamMarca,eTipo tipos[],int tamTipo);
 int buscarIdNotebooks(eNotebook notebooks[],int tam,int id);
 int bajaNotebook(eNotebook notebooks[],int tam,eMarca marcas[], int tamMarca,eTipo tipos[],int tamTipo);
+int modificarNotebook(eNotebook notebooks[],int tam,eMarca marcas[], int tamMarca,eTipo tipos[],int tamTipo);
+int ordenarNotebooks(eNotebook notebooks[],int tam,eMarca marcas[], int tamMarca,eTipo tipos[],int tamTipo);
 
 #endif /* NOTEBOOK_H_ */

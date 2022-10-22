@@ -16,7 +16,7 @@ typedef struct{
 	char descripcion [20];
 }eMarca;
 
-int cargarnombreMarca(eMarca marcas[],int tam, int idMarca, char descripcion[]);
+int cargarNombreMarca(eMarca marcas[],int tam, int idMarca, char descripcion[]);
 int mostrarMarcas(eMarca marcas[],int tam);
 
 #endif /* MARCA_H_ */
