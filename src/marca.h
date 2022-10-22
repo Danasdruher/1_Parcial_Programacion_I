@@ -6,7 +6,7 @@
  */
 
 
-#include "tipo.h"
+
 
 #ifndef MARCA_H_
 #define MARCA_H_

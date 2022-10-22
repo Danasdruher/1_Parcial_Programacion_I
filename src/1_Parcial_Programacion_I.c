@@ -64,7 +64,7 @@ int main(void) {
 	}
 
 
-	//harcodearJugadores(jugador, TAM, CANT, &nuevoIdJugador);
+
 
 
 	do{
@@ -85,17 +85,12 @@ int main(void) {
 					printf("Baja realizada exitosamente!!!\n\n");
 				}
 				break;
-			/*case 3:
-				if(!modificarJugador(jugador, TAM, confederaciones,TAM_CONF)){
-					printf("No se pudo realizar modificar el jugador.\n\n");
-				}
-				else{
-					printf("Modificacion realizada exitosamente!!!\n\n");
-				}
-				break;*/
+			case 3:
+
+				break;
 			case 4:
 				mostrarNotebooks(notebooks, TAM, marcas, TAM_MARCA, tipos, TAM_TIPO);
-				//ordenarJugadores(jugador,TAM,confederaciones,TAM_CONF);
+
 				if(!mostrarNotebooks(notebooks, TAM, marcas, TAM_MARCA, tipos, TAM_TIPO)){
 					printf("No se pudieron mostrar los Jugadores!!!");
 				}

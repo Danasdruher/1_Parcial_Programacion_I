@@ -4,7 +4,7 @@
  *  Created on: 21 oct. 2022
  *      Author: daniel
  */
-#include "marca.h"
+
 
 #ifndef TIPO_H_
 #define TIPO_H_
