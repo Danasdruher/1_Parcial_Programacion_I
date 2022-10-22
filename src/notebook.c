@@ -101,13 +101,13 @@ int altaNotebooks(eNotebook notebooks[],int tam,eMarca marcas[], int tamMarca,eT
 				scanf("%[^\n]s",auxNotebooks.modelo);
 
 				printf("Ingrese el id de la marca: ");
-				scanf("%d",auxNotebooks.idMarca);
+				scanf("%d",&auxNotebooks.idMarca);
 
 				printf("Ingrese el id de la marca: ");
-				scanf("%d",auxNotebooks.idTipo);
+				scanf("%d",&auxNotebooks.idTipo);
 
 				printf("Ingrese el precio: ");
-				scanf("%f",auxNotebooks.precio);
+				scanf("%f",&auxNotebooks.precio);
 
 				auxNotebooks.isEmpty = 0;
 				notebooks[indiceLibre] = auxNotebooks;
@@ -179,7 +179,7 @@ int bajaNotebook(eNotebook notebooks[],int tam,eMarca marcas[], int tamMarca,eTi
 	char confirmar;
 	if (notebooks != NULL && tam > 0){
 		printf("    ***BAJA DE NOTEBOOK***\n\n");
-		mostrarnotebook(notebooks,marcas, tamMarca, tipos, tamTipo);
+		mostrarNotebook(notebooks,marcas, tamMarca, tipos, tamTipo);
 		printf("Ingrese el id de la notebook que desea dar de baja: ");
 		scanf("%d", &id);
 
