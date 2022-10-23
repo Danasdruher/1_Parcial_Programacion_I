@@ -13,7 +13,7 @@ typedef struct{
 	float precio;
 }eServicio;
 
-int cargarNombreServicio(eServicio servicios[],int tam, int idTipo, char descripcion[],float precio);
+int cargarNombreServicio(eServicio servicios[],int tam, int idServ, char descripcion[],float precio);
 int mostrarServicios(eServicio servicios[],int tam);
 
 #endif /* SERVICIOS_H_ */

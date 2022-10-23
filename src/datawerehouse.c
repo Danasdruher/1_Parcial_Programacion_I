@@ -16,6 +16,7 @@
 #include "tipo.h"
 #include "datawerehouse.h"
 #include "servicios.h"
+#include "trabajo.h"
 
 
 #define TAM 3
@@ -49,7 +50,11 @@ int idTipo[10] = {5003,5001,5000,5001,5000,5003,5002,5002,5003,5001};
 
 float precio [10] = {150000,130000,80000,60000,175000,150000,130000,80000,60000,175000};
 
+int idServicio[10] = {20000,20003,20001,20003,20000,20000,20003,20001,20003,20000};
 
+//int fecha[10] = {{20/02/2022},{24/7/2022},{10/5/2022},{24/6/2022},{12/3/2022},{20/02/2022},{24/7/2022},{10/5/2022},{24/6/2022},{12/3/2022}};
+
+int idNotebook[] = {1,5,7,8,6,4,2,1,4,3};
 
 int harcodearNotebooks(eNotebook notebooks[],int tam, int cant, int* pId){
 	int contador = -1;
@@ -69,3 +74,23 @@ int harcodearNotebooks(eNotebook notebooks[],int tam, int cant, int* pId){
 
 	return contador;
 }
+
+
+/*int harcodearTrabajos(eTrabajo trabajos[], int tamTrab, int cantTrab, int* pId){
+	int contador = -1;
+	if (trabajos != NULL && tamTrab > 0 && cantTrab >= 0 && cantTrab <= tamTrab && pId != NULL){
+		contador = 0;
+		for(int i=0; i<cantTrab; i++){
+			trabajos[i].id = *pId;
+			(*pId)++;
+			//strcpy(trabajos[i].mode, modelo[i]);
+			trabajos[i].idNotebook = idNotebook[i];
+			trabajos[i].idServicio = idServicio[i];
+			//trabajos[i].i = fecha[i];
+			trabajos[i].isEmpty = 0;
+			contador++;
+		}
+	}
+
+	return contador;
+}*/

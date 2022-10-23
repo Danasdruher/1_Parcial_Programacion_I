@@ -18,11 +18,11 @@
 #include "servicios.h"
 
 
-int cargarNombreServicio(eServicio servicios[],int tam, int idTipo, char descripcion[],float precio){
+int cargarNombreServicio(eServicio servicios[],int tam, int idServ, char descripcion[],float precio){
 	int todoOk = 0;
 	if(servicios != NULL && tam > 0 && descripcion != NULL){
 		for(int i=0; i < tam; i++){
-			if(servicios[i].id == idTipo){
+			if(servicios[i].id == idServ){
 				strcpy(descripcion, servicios[i].descripcion);
 				servicios[i].precio = precio;
 				break;
@@ -36,7 +36,7 @@ int cargarNombreServicio(eServicio servicios[],int tam, int idTipo, char descrip
 int mostrarServicios(eServicio servicios[],int tam){
 	int todoOk = 0;
 	if (servicios != NULL && tam > 0){
-		printf("         ***SERVICIOS***\n");
+		printf("        ***SERVICIOS***\n");
 		printf("-----------------------------------\n");
 		printf("|   ID  |  DESCRIPCION  |  PRECIO |\n");
 		printf("-----------------------------------\n");

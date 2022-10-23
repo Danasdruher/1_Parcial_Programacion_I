@@ -9,5 +9,6 @@
 #define DATAWEREHOUSE_H_
 
 int harcodearNotebooks(eNotebook notebooks[],int tam, int cant, int* pId);
+//int harcodearTrabajos(eTrabajo trabajos[],int tamTrab, int cantTrab, int* pId);
 
 #endif /* DATAWEREHOUSE_H_ */

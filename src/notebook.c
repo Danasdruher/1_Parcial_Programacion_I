@@ -15,7 +15,7 @@
 #include "notebook.h"
 #include "marca.h"
 #include "tipo.h"
-#include "servicios.h"
+
 
 
 
@@ -283,3 +283,16 @@ int ordenarNotebooks(eNotebook notebooks[],int tam,eMarca marcas[], int tamMarca
 	return todoOk;
 }
 
+int cargarNombreNotebook(eNotebook notebooks[],int tam, int id, char descripcion[]){
+	int todoOk = 0;
+		if(notebooks != NULL && tam > 0 && descripcion != NULL){
+			for(int i=0; i < tam; i++){
+				if(notebooks[i].id == id){
+					strcpy(descripcion, notebooks[i].modelo);
+					break;
+				}
+			}
+			todoOk = 1;
+		}
+		return todoOk;
+}

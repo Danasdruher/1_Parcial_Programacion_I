@@ -7,7 +7,7 @@
 
 #include "marca.h"
 #include "tipo.h"
-#include "servicios.h"
+
 
 #ifndef NOTEBOOK_H_
 #define NOTEBOOK_H_
@@ -32,5 +32,6 @@ int buscarIdNotebooks(eNotebook notebooks[],int tam,int id);
 int bajaNotebook(eNotebook notebooks[],int tam,eMarca marcas[], int tamMarca,eTipo tipos[],int tamTipo);
 int modificarNotebook(eNotebook notebooks[],int tam,eMarca marcas[], int tamMarca,eTipo tipos[],int tamTipo);
 int ordenarNotebooks(eNotebook notebooks[],int tam,eMarca marcas[], int tamMarca,eTipo tipos[],int tamTipo);
+int cargarNombreNotebook(eNotebook notebooks[],int tam, int id, char descripcion[]);
 
 #endif /* NOTEBOOK_H_ */
