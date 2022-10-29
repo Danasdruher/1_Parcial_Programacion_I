@@ -14,21 +14,24 @@
 #include <stdio_ext.h>
 #include <ctype.h>
 #include <string.h>
+
 #include "notebook.h"
 #include "marca.h"
 #include "tipo.h"
 #include "datawerehouse.h"
 #include "servicios.h"
 #include "trabajo.h"
-
+#include "output.h"
+#include "cliente.h"
 
 #define TAM 10
 #define TAM_MARCA 4
 #define TAM_TIPO 4
 #define TAM_SERV 4
-#define TAM_TRAB 3
-#define CANT 8
-#define CAN_TRAB 8
+#define TAM_TRAB 50
+#define TAM_CLIENT 5
+#define CANT 10
+
 
 
 
@@ -38,13 +41,13 @@ int main(void){
 
 	char seguir = 's';
 	int nuevoIdNotebook = 1;
-	int nuevoIdTrabajos = 1;
+	int nuevoIdTrabajos = 50000;
 	eMarca marcas[TAM_MARCA] = {{1000, "Compaq"}, {1001, "Asus"},{1002, "Acer"},{1003, "HP"}};
 	eTipo tipos[TAM_TIPO] = {{5000,"Gamer"},{5001, "Disenio"},{5002, "Ultrabook"},{5003, "Normalita"}};
 	eServicio servicios[TAM_SERV] = {{20000,"Bateria",2250},{20001,"Display",10300},{20002,"Teclado",4400},{20003,"Fuente",5600}};
 	eNotebook notebooks[TAM];
 	eTrabajo trabajos[TAM_TRAB];
-
+	eCliente clientes[TAM_CLIENT] = {{500,"Daniel",'m'},{501,"Yohama",'f'},{502,"Paula",'f'},{503,"Daniela",'f'},{504,"José",'m'}};
 
 
 	if(!inicializarNotebook(notebooks, TAM)){
@@ -62,35 +65,35 @@ int main(void){
 	do{
 		switch(menuPrincipal()){
 			case 1:
-				if(!altaNotebooks(notebooks, TAM,marcas,TAM_MARCA,tipos,TAM_TIPO, &nuevoIdNotebook)){
+				if(!altaNotebooks(notebooks, TAM,marcas,TAM_MARCA,tipos,TAM_TIPO,clientes,TAM_CLIENT, &nuevoIdNotebook)){
 					printf("No se pudo realizar el alta\n\n");
 				}
 				else{
 					printf("Alta realizada exitosamente!!!\n\n");
-					mostrarNotebooks(notebooks, TAM, marcas, TAM_MARCA, tipos, TAM_TIPO);
+					mostrarNotebooks(notebooks, TAM, marcas, TAM_MARCA, tipos,TAM_TIPO,clientes,TAM_CLIENT);
 				}
 				break;
 			case 2:
-				if(!bajaNotebook(notebooks, TAM, marcas, TAM_MARCA, tipos, TAM_TIPO)){
+				if(!bajaNotebook(notebooks, TAM, marcas, TAM_MARCA, tipos, TAM_TIPO,clientes,TAM_CLIENT)){
 					printf("No se pudo realizar la baja\n\n");
 				}
 				else{
 					printf("Baja realizada exitosamente!!!\n\n");
-					mostrarNotebooks(notebooks, TAM, marcas, TAM_MARCA, tipos, TAM_TIPO);
+					mostrarNotebooks(notebooks, TAM, marcas, TAM_MARCA, tipos,TAM_TIPO,clientes,TAM_CLIENT);
 				}
 				break;
 			case 3:
-				if(!modificarNotebook(notebooks, TAM, marcas,TAM_MARCA,tipos,TAM_TIPO)){
+				if(!modificarNotebook(notebooks, TAM, marcas,TAM_MARCA,tipos,TAM_TIPO,clientes,TAM_CLIENT)){
 					printf("No se pudo realizar modificar el jugador.\n\n");
 				}
 				else{
 					printf("Modificacion realizada exitosamente!!!\n\n");
-					mostrarNotebooks(notebooks, TAM, marcas, TAM_MARCA, tipos, TAM_TIPO);
+					mostrarNotebooks(notebooks, TAM, marcas, TAM_MARCA, tipos,TAM_TIPO,clientes,TAM_CLIENT);
 				}
 				break;
 			case 4:
 				ordenarNotebooks(notebooks, TAM, marcas, TAM_MARCA, tipos, TAM_TIPO);
-				if(!mostrarNotebooks(notebooks, TAM, marcas, TAM_MARCA, tipos, TAM_TIPO)){
+				if(!mostrarNotebooks(notebooks, TAM, marcas, TAM_MARCA, tipos,TAM_TIPO,clientes,TAM_CLIENT)){
 					printf("No se pudieron mostrar las notebooks!!!\n");
 				}
 				break;
@@ -110,7 +113,7 @@ int main(void){
 				}
 				break;
 			case 8:
-				if(!altaTrabajos(trabajos, TAM_TRAB, servicios, TAM_SERV, notebooks, TAM, marcas, TAM_MARCA, tipos, TAM_TIPO, &nuevoIdTrabajos)){
+				if(!altaTrabajos(trabajos, TAM_TRAB, servicios, TAM_SERV, notebooks, TAM, marcas, TAM_MARCA, tipos, TAM_TIPO,clientes,TAM_CLIENT, &nuevoIdTrabajos)){
 					printf("No se pudo realizar el alta\n\n");
 				}
 				else{
@@ -118,11 +121,16 @@ int main(void){
 				}
 				break;
 			case 9:
-				if(!mostrarTrabajos(trabajos, TAM_TRAB, servicios, TAM_SERV, notebooks, TAM, &nuevoIdTrabajos)){
+				if(!mostrarTrabajos(trabajos, TAM_TRAB, servicios, TAM_SERV, notebooks, TAM)){
 					printf("No se pudieron mostrar los Trabajos!!!");
 				}
 				break;
 			case 10:
+				if(!mostrarMenuInformes(trabajos, TAM_TRAB, notebooks, TAM, tipos, TAM_TIPO, marcas, TAM_MARCA,clientes,TAM_CLIENT)){
+					printf("No se pudieron mostrar los Trabajos!!!");
+				}
+				break;
+			case 11:
 				printf("Ha seleccionado salir.\n");
 				seguir='n';
 				break;

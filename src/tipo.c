@@ -11,11 +11,9 @@
 #include <ctype.h>
 #include <string.h>
 
-#include "notebook.h"
-#include "marca.h"
 #include "tipo.h"
-#include "datawerehouse.h"
-#include "servicios.h"
+
+
 
 
 int cargarNombreTipo(eTipo tipos[],int tam, int idTipo, char descripcion[]){
@@ -51,3 +49,17 @@ int mostrarTipos(eTipo tipos[],int tam){
 	}
 	return todoOk;
 }
+int validarIdTipos(int id,eTipo tipos[],int tam){
+	int esValido = 0;
+	if(tipos != NULL && tam > 0){
+		for(int i=0;i<tam;i++){
+			if(tipos[i].id == id){
+				esValido = 1;
+				break;
+			}
+		}
+
+	}
+	return esValido;
+}
+

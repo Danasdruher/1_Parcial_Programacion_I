@@ -52,9 +52,11 @@ float precio [10] = {150000,130000,80000,60000,175000,150000,130000,80000,60000,
 
 int idServicio[10] = {20000,20003,20001,20003,20000,20000,20003,20001,20003,20000};
 
-//int fecha[10] = {{20/02/2022},{24/7/2022},{10/5/2022},{24/6/2022},{12/3/2022},{20/02/2022},{24/7/2022},{10/5/2022},{24/6/2022},{12/3/2022}};
+int fecha[10] = {{20,02,2022},{24,7,2022},{10,5,2022},{24,6,2022},{12,3,2022},{20,02,2022},{24,7,2022},{10,5,2022},{24,6,2022},{12,3,2022}};
 
 int idNotebook[] = {1,5,7,8,6,4,2,1,4,3};
+
+int idCliente[] = {500,503,502,504,501,504,502,500,503,504};
 
 int harcodearNotebooks(eNotebook notebooks[],int tam, int cant, int* pId){
 	int contador = -1;
@@ -66,6 +68,7 @@ int harcodearNotebooks(eNotebook notebooks[],int tam, int cant, int* pId){
 			strcpy(notebooks[i].modelo, modelo[i]);
 			notebooks[i].idMarca = idMarca[i];
 			notebooks[i].idTipo = idTipo[i];
+			notebooks[i].idCliente = idCliente[i];
 			notebooks[i].precio = precio[i];
 			notebooks[i].isEmpty = 0;
 			contador++;
@@ -86,7 +89,7 @@ int harcodearNotebooks(eNotebook notebooks[],int tam, int cant, int* pId){
 			//strcpy(trabajos[i].mode, modelo[i]);
 			trabajos[i].idNotebook = idNotebook[i];
 			trabajos[i].idServicio = idServicio[i];
-			//trabajos[i].i = fecha[i];
+			trabajos[i].fecha = fecha[i];
 			trabajos[i].isEmpty = 0;
 			contador++;
 		}

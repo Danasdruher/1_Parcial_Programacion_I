@@ -15,5 +15,5 @@ typedef struct{
 
 int cargarNombreTipo(eTipo tipos[],int tam, int idTipo, char descripcion[]);
 int mostrarTipos(eTipo tipos[],int tam);
-
+int validarIdTipos(int id,eTipo tipos[],int tam);
 #endif /* TIPO_H_ */
