@@ -43,7 +43,7 @@ int mostrarMenuInformes(eTrabajo trabajos[],int tamTrabajos,eNotebook notebooks[
 			case 6:
 				MostrarMarcasMasElegidas(notebooks, tam, tipos, tamTipo, marcas, tamMarca, clientes, tamClient);
 				break;
-			case 7:
+			case 11:
 				printf("Ha seleccionado salir.\n");
 				seguir = 'n';
 				break;
@@ -60,15 +60,19 @@ return todoOk;
 int menuInformes(void){
 
 	int opcion;
-	printf("======================  ***MENU DE INFORMES***  ======================================\n");
-	printf("1.- Mostrar las notebooks del tipo seleccionado por el usuario.                       |\n");
-	printf("2.- Mostrar notebooks de una marca seleccionada.                                      |\n");
-	printf("3.- Informar la o las notebooks más baratas.                                          |\n");
-	printf("4.- Mostrar un listado de las notebooks separadas por marca.                          |\n");
-	printf("5.- Elegir un tipo y una marca y contar cuantas notebooks hay de ese tipo y esa marca.|\n");
-	printf("6.- Mostrar la o las marcas más elegidas por los clientes.                            |\n");
-	printf("7.- SALIR                                                                             |\n");
-	printf("======================================================================================\n");
+	printf("======================  ***MENU DE INFORMES***  ==================================================\n");
+	printf("1.- Mostrar las notebooks del tipo seleccionado por el usuario.                                   |\n");
+	printf("2.- Mostrar notebooks de una marca seleccionada.                                                  |\n");
+	printf("3.- Informar la o las notebooks más baratas.                                                      |\n");
+	printf("4.- Mostrar un listado de las notebooks separadas por marca.                                      |\n");
+	printf("5.- Elegir un tipo y una marca y contar cuantas notebooks hay de ese tipo y esa marca.            |\n");
+	printf("6.- Mostrar la o las marcas más elegidas por los clientes.                                        |\n");
+	printf("7.- Pedir una notebook y mostrar todos los trabajos que se le hicieron a la misma.                |\n");
+	printf("8.- Pedir un notebook e informar la suma de los importes de los services se le hicieron a la misma|\n");
+	printf("9.- Pedir un servicio y mostrar las notebooks a las que se realizó ese servicio y la fecha.       |\n");
+	printf("10.-Pedir una fecha y mostrar todos los servicios realizados en la misma.                         |\n");
+	printf("11.- SALIR                                                                                        |\n");
+	printf("==================================================================================================\n");
 	printf("Ingrese la opción: ");
 	scanf("%d", &opcion);
 	printf("\n\n");
